@@ -1,16 +1,30 @@
-# Task Manager API (FastAPI + SQLite)
+# Task Manager REST API
 
-A simple backend REST API built with FastAPI and SQLAlchemy.
+A modular RESTful backend API built using FastAPI and SQLAlchemy with SQLite persistence.
+
+## Architecture
+
+The project follows a clean modular structure:
+
+app/
+  main.py
+  database.py
+  models/
+    task.py
+    task_db.py
+  routes/
+    tasks.py
 
 ## Features
 
 - Create tasks
 - List all tasks
 - Get task by ID
-- Update task
-- Delete task
+- Update tasks
+- Delete tasks
 - SQLite database persistence
 - Proper 404 error handling
+- Dependency-based database sessions
 
 ## Tech Stack
 
@@ -20,22 +34,19 @@ A simple backend REST API built with FastAPI and SQLAlchemy.
 - SQLite
 - Uvicorn
 
-## Run Locally
+## Why FastAPI?
+
+FastAPI provides:
+- Automatic API documentation
+- Strong data validation with Pydantic
+- High performance async-ready framework
+
+## Running Locally
 
 python -m venv venv
-# Windows:
 .\venv\Scripts\Activate.ps1
-
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-
-## API Endpoints
-
-POST /tasks  
-GET /tasks  
-GET /tasks/{id}  
-PUT /tasks/{id}  
-DELETE /tasks/{id}
 
 Docs available at:
 http://127.0.0.1:8000/docs
